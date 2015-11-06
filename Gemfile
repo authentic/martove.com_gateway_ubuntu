@@ -19,6 +19,9 @@ gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
 gem 'net-ssh', '~> 2.9', '>= 2.9.1'
 gem 'i18n', '0.6.11'
 gem 'rack-cache', '1.2'
+gem 'highline', '1.6.19'
+gem 'nokogiri', '1.5.10'
+
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
