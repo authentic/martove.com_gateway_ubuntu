@@ -18,6 +18,7 @@ gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
 # in production environments by default.
 gem 'net-ssh', '~> 2.9', '>= 2.9.1'
 gem 'i18n', '0.6.11'
+gem 'rack-cache', '~> 1.2'
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'

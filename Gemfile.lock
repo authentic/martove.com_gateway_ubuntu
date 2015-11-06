@@ -297,6 +297,7 @@ DEPENDENCIES
   less-rails (= 2.3.3)
   mysql2 (~> 0.3.20)
   net-ssh (~> 2.9, >= 2.9.1)
+  rack-cache (~> 1.2)
   rails (= 3.2.20)
   refinerycms (~> 2.0.10)
   refinerycms-blog!
