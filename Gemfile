@@ -23,6 +23,7 @@ gem 'highline', '1.6.19'
 gem 'nokogiri', '1.5.10'
 gem 'execjs', '1.4.0'
 gem 'rails_autolink', '1.1.0'
+gem 'ref', '1.0.5'
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
