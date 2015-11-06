@@ -60,7 +60,7 @@ gem 'refinerycms-page-images', '~> 2.0.1'
 gem 'refinerycms-news', '~> 2.0.1'
 #gem 'refinerycms-portfolio', :git => 'git://github.com/resolve/refinerycms-portfolio.git', :branch => '2-0-stable'
 gem 'refinerycms-portfolio', :git => 'git://github.com/refinery/refinerycms-portfolio.git', :branch => '2-0-stable'
-gem 'acts-as-taggable-on', '~> 3.4'
+gem 'acts-as-taggable-on', '2.4.1'
 
 
 
