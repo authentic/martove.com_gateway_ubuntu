@@ -1,0 +1,28 @@
+<%= render '/shared/visible_phone' %>
+<div class="hero-unit">
+  <div class="container">
+    <h2>Архив за <%= t("date.standalone_month_names")[@archive_date.month] %> <%= @archive_date.year %></h2>
+  </div>
+
+</div>
+<div class="container clearfix" id="main-content">
+  <div class="row-fluid sidebar-right">
+    <div class="span9 blog-summary primary-column">
+
+      <% if @posts.any? %>
+          <section id="blog_posts">
+            <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+          </section>
+      <% else %>
+          <p><%= t('.no_blog_articles_posted', :date => @archive_date.strftime('%B %Y')) %></p>
+      <% end %>
+    </div>
+    <section class="span3 sidebar secondary-column" id="secondary-nav">
+      <%= render :partial => "/refinery/blog/shared/categories" %>
+      <%= render :partial => "/refinery/blog/shared/tags" %>
+      <%= blog_archive_widget %>
+    </section>
+  </div>
+</div>
+
+

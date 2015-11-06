@@ -1,0 +1,31 @@
+<h3> <%= (comments = @post.comments.approved).any? ? "#{@post.comments.approved.count} #{Russian::pluralize(@post.comments.approved.count, "комментарий", "комментария", "комментариев")}" : "Нет комментариев" %>
+  | <%= link_to "#{t('add', :scope => 'refinery.blog.posts.show.comments')}", "#comment-form", :class => "scrollto" %></h3>
+<% if (comments = @post.comments.approved).any? %>
+    <ul>
+      <%= render :partial => "comment", :collection => comments %>
+<% end %>
+</ul>
+<div id="comment-form">
+  <% flash.each do |key, value| %>
+      <div id='flash' class="flash flash_<%= key %>">
+        <%= value %>
+      </div>
+  <% end %>
+  <%= simple_form_for [refinery, :blog, @comment], :html => {:novalidate => true, :class => "form-vertical"} do |f| %>
+
+      <%= f.error_notification %>
+      <h4>Добавить комментарий</h4>
+
+      <p>Необходимо ввести имя и адрес электронной почты. Ваш адрес электронной почты публиковаться и передаваться
+        третьим лицам не будет.
+        Комментарии модерируются. </p>
+
+      <p>* Обязательные поля.</p>
+      <%= f.input :name, :required => true, :label => 'Имя:', :autofocus => true, :input_html => {:class => "span10"} %>
+      <%= f.input :email, :required => true, :label => 'Эл. почта:', :input_html => {:class => "span10"} %>
+      <%= f.input :message, :input_html => {:rows => 3, :cols => "30", :class => "span10"}, :as => :text, :label => 'Сообщение:', :required => true %>
+      <%= f.button :submit, 'Добавить комментарий', :class => "btn btn-primary" %>
+
+  <% end %>
+</div>
+

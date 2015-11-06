@@ -1,0 +1,15 @@
+<% if @posts.many? %>
+    <aside class="widget">
+      <h5 class="short_headline"><span>Последние статьи</span></h5>
+      <ul id="blogposts" class="blogposts clearfix">
+        <% @posts.each do |post| %>
+            <li> <span class="date"> <span class="day"><%= Russian::strftime(post.published_at.to_date, "%d") %></span> <span class="month"> <%= Russian::strftime(post.published_at, "%b") %>
+</span> <span class="year"><%= Russian::strftime(post.published_at, "%Y") %></span> </span>
+
+              <h3><%= link_to post.title, refinery.blog_post_path(post) %>
+              </h3>
+            </li>
+        <% end %>
+      </ul>
+<% end %>
+</aside>

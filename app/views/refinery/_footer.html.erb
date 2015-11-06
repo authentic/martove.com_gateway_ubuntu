@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="span4">
+      <section>
+        <h4>Контакты</h4>
+
+        <p> МАРТОВЕ.КОМ | СЕЛЬСКАЯ ЖИЗНЬ ОТ А ДО Я<br>
+          Село Мартовое, Печенежский район,<br> Харьковская область, Украина
+          <br>
+          <strong>Электронная почта:</strong> <a href="mailto:contact@martove.com">contact@martove.com</a></p>
+      </section>
+    </div>
+    <div class="span4">
+      <section>
+        <h4>Кто на сайте...</h4>
+        <% unless local_request? or refinery_user? -%>
+            <figure class="center">
+              <script type="text/javascript" src="http://jh.revolvermaps.com/2/1.js?i=7i49arfke06&amp;s=220&amp;m=7&amp;v=true&amp;r=false&amp;b=732002&amp;n=true&amp;c=ff0000" async="async"></script>
+            </figure>
+        <% end -%>
+      </section>
+
+
+    </div>
+
+    <div class="span4">
+      <section>
+        <h4>Погода</h4>
+        <figure class="center">
+          <div id="MeteoInformerWrap">
+            <script type="text/javascript" src="http://meteo.ua/var/informers.js"></script>
+            <script type="text/javascript">
+                makeMeteoInformer("http://meteo.ua/informer/get.php?cities=24947&w=210&lang=ru&rnd=1&or=vert&clr=9&dt=today&style=classic", 210, 206);
+            </script>
+          </div>
+        </figure>
+      </section>
+    </div>
+  </div>
+</div>
+<section class="footerCredits">
+  <div class="container">
+    <ul class="clearfix">
+      <li><%= t('.copyright', :year => Time.now.year,
+                :site_name => Refinery::Core.site_name) %></li>
+      <li><a href="sitemap.html">Site Map</a></li>
+      <li><%= link_to 'Политика конфиденциальности', "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %></li>
+    </ul>
+    <p>Все права защищены. Любое использование информации и материалов сайта возможно только
+      при наличии прямой активной ссылки на источник.</p>
+  </div>
+</section>

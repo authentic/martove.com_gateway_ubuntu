@@ -1,0 +1,33 @@
+<%= render '/shared/visible_phone' %>
+<div class="hero-unit">
+  <div class="container">
+    <h2>
+      <%= "Записи с тегом: &#8220;#{@tag_name.titleize}&#8221;".html_safe %>
+    </h2>
+  </div>
+</div>
+
+
+<div class="container clearfix" id="main-content">
+  <div class="row-fluid sidebar-right">
+    <div class="span9 blog-summary primary-column">
+
+      <% if @posts.any? %>
+          <section id="blog_posts">
+            <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+            <%= will_paginate @posts %>
+          </section>
+      <% else %>
+          <p><%= t('.no_blog_articles_yet') %></p>
+      <% end %>
+
+    </div>
+    <section class="span3 sidebar secondary-column" id="secondary-nav">
+      <%= render :partial => "/refinery/blog/shared/categories" %>
+      <%= render :partial => "/refinery/blog/shared/tags" %>
+      <%= blog_archive_widget %>
+    </section>
+
+  </div>
+</div>
+

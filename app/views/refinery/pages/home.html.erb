@@ -1,0 +1,162 @@
+<script language="Javascript" src="http://script.pravoslavie.ru/icon.php?advanced=1&href=2&"></script>
+<script language="Javascript" src="http://script.days.ru/calendar.php?advanced=1&target=1&hrams=0&hram=0&tmshift=-2"></script>
+<div id="page">
+  <div class="container visible-phone hidden-tablet hidden-desktop">
+    <p class="right">
+
+      <a class="btn" href="#tertiary-nav">Статьи&nbsp;<i class="icon-align-justify"></i></a></p>
+  </div>
+  <div class="hero-unit">
+    <div class="container">
+      <h2>Добро пожаловать на сайт села Мартовое!</h2>
+    </div>
+  </div>
+
+
+  <div class="container clearfix" id="main-content">
+
+
+    <p>Здесь вы найдете интересную информацию о жизни небольшого украинского села в Печенежском районе Харьковской
+      области.</p>
+    <hr>
+    <div class="row-fluid holy-grail">
+      <div class=" span6 primary-column">
+
+        <div class="flexslider image-slider">
+          <ul class="slides">
+            <li> <%= image_tag("02.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Мемориал погибшим в годы Великой Отечественной войны.
+                </p>
+              </div>
+            </li>
+            <li> <%= image_tag("01.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Мартовской Дом культуры.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("03.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Мартовская средняя школа имени Тараса Григорьевича Шевченка.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("08.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Памятник пионеру-герою Павлику Поддубному, отдавшему свою жизнь ради спасения группы советских
+                  разведчиков 03 февраля 1943г.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("05.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Печенежское водохранилище.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("06.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Плотина Печенежского водохранилища.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("09.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Памятный знак жертвам Голодомора 1932-1933 г.г.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <section class="span3 sidebar secondary-column">
+        <aside class="widget">
+          <h5 class="short_headline"><span>православный календарь</span></h5>
+
+          <p><strong>
+            <script language="Javascript">print_day();</script>
+            <span class="text-error"><script language="Javascript">print_holiday();</script></span></strong></p>
+          <p><em>
+            <script language="Javascript">print_post();</script>
+            <script language="Javascript">print_trapeza();</script>
+          </em></p>
+          <figure class="center">
+            <script language="Javascript">print_img();</script>
+            <figcaption class="center">
+              <script language="Javascript">print_podpis();</script>
+            </figcaption>
+          </figure>
+        </aside>
+        <aside class="widget clearfix">
+
+          <figure class="center">
+            <%= link_to(image_tag("история.png", :alt => 'История села Мартовое'), 'http://www.martove.com.ua/', :target => blank?) %>
+            <figcaption class="center">
+            </figcaption>
+          </figure>
+
+        </aside>
+        <!--<aside class="widget clearfix">-->
+          <!--<h5 class="short_headline"><span>Объявления</span></h5>-->
+
+
+          <!--<div class="well">-->
+            <!--<h5>Шановні громадяни!</h5>-->
+
+            <!--<p><strong>29 серпня 2013 року з 15.00 до 17.00</strong>-->
+              <!--в приміщенні актової зали Печенізької районної ради за адресою смт. Печеніги, вул. Леніна, 48 -->
+              <!--буде здійснюватись особистий прийом громадян представником Головного Управління МВС України в Харківській-->
+              <!--області.</p>-->
+
+            <!--<p>Прийом буде проводити заступник начальника Управління державної служби боротьби з економічною злочинністю-->
+
+              <!--<strong>Подсоха Богдан Анатолійович</strong></p>-->
+
+          <!--</div>-->
+        <!--</aside>-->
+      </section>
+
+      <section class="span3 sidebar tertiary-column" id="tertiary-nav">
+        <% if @blog_posts.any? %>
+            <aside class="widget">
+
+              <h5 class="short_headline"><span>статьи</span></h5>
+
+              <div class="sidebar-tabs">
+                <ul class="tabs">
+                  <li class="tab"><a href="#tab-latest">Последние статьи</a></li>
+                  <li class="tab"><a href="#tab-tags">Теги</a></li>
+                </ul>
+                <div class="panels">
+                  <div id="tab-latest">
+                    <ul id="blogposts" class="blogposts clearfix">
+
+                      <% @blog_posts.each do |post| %>
+                          <li> <span class="date"> <span class="day"><%= Russian::strftime(post.published_at.to_date, "%d") %></span> <span class="month"> <%= Russian::strftime(post.published_at, "%b") %>
+</span> <span class="year"><%= Russian::strftime(post.published_at, "%Y") %></span> </span>
+
+                            <h3><%= link_to post.title, refinery.blog_post_path(post) %>
+                            </h3>
+
+                          </li>
+
+                      <% end %>
+                    </ul>
+                  </div>
+        <% end %>
+        <% if @tags.any? %>
+            <div id="tab-tags" class="tag-wrapper">
+              <nav id='tags'>
+                <% tag_cloud(@tags, %w(tag1 tag2 tag3 tag4)) do |tag, css_class| %>
+                    <%= link_to tag.name, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize), :class => "tag" %>
+                <% end %>
+              </nav>
+        <% end %>
+        </div>
+        </div>
+        </div>
+        </aside>
+
+        <% @items = Refinery::News::Item.latest(5) %>
+        <%= render :partial => '/refinery/news/items/recent_posts' %>
+
+      </section>
+    </div>
+
+  </div>
+</div>
