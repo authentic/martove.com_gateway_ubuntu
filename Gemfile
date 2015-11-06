@@ -17,7 +17,7 @@ gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'net-ssh', '~> 2.9', '>= 2.9.1'
-
+gem 'i18n', '0.6.11'
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
