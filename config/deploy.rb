@@ -72,7 +72,7 @@ namespace :deploy do
   end
    namespace :assets do
      desc "Precompile assets on local machine and upload them to the server."
-     task :precompile, roles: :web, except: {no_release: true} do
+     task :precompile do
        run_locally "bundle exec rake assets:precompile RAILS_ENV=development"
        find_servers_for_task(current_task).each do |server|
          run_locally "rsync -vr  --exclude='.DS_Store' --rsh 'ssh -p #{ssh_options[:port]}' public/assets  #{user}@a2s76.a2hosting.com:#{shared_path}/"
