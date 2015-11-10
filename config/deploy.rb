@@ -42,12 +42,8 @@ namespace :deploy do
 #############################################################
 #	Passenger
 #############################################################
-  task :start do
-    ;
-  end
-  task :stop do
-    ;
-  end
+  task :start do ; end
+  task :stop do ; end
   task :restart, :role => :app, :except => {:no_release => true} do
     run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
   end
@@ -86,12 +82,12 @@ namespace :deploy do
 #task :stop_daemons, :roles=> :app do
 #  run "cd #{current_path};RAILS_ENV=production bundle exec lib/daemons/rss_ctl stop"
 #end
-  task :start_daemons, :roles => :app do
-    run "cd #{current_path};RAILS_ENV=production bundle exec lib/daemons/rss_ctl start"
-  end
+  # task :start_daemons, :roles => :app do
+  #   run "cd #{current_path};RAILS_ENV=production bundle exec lib/daemons/rss_ctl start"
+  # end
 
 end
 after 'deploy:update_code', 'deploy:symlink_system'
 before 'bundle:install', 'deploy:symlink_config'
-after 'deploy', 'deploy:start_daemons'
+# after 'deploy', 'deploy:start_daemons'
 #before 'deploy', 'deploy:stop_daemons'
