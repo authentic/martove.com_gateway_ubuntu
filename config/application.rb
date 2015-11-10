@@ -39,6 +39,7 @@ module MartoveCom
     config.i18n.load_path += Dir[Rails.root.join('locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
     config.i18n.enforce_available_locales = false
+    I18n.config.enforce_available_locales = false
     config.to_prepare do
       Refinery.searchable_models = [Refinery::Page, Refinery::Blog]
     end
