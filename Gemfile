@@ -18,7 +18,7 @@ gem 'russian', '~> 0.6.0'
 #gem 'feedjira'
 gem 'feedzirra', '0.2.0.rc2'
 gem 'daemons', '~> 1.2', '>= 1.2.3'
-gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
+gem 'gmaps4rails', '2.1.2'
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'net-ssh', '2.6.8'
