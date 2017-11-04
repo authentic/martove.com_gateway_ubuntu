@@ -37,7 +37,8 @@ group :assets do
   gem 'twitter-bootstrap-rails', '2.2.7'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
-  gem 'therubyracer', :platforms => :ruby
+ # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', '~> 0.12.2'
   gem 'less-rails', '2.3.3'
   gem 'uglifier', '1.2.3'
 end

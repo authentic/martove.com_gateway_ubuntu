@@ -317,7 +317,7 @@ DEPENDENCIES
   simple_form
   sprockets (= 2.2.2)
   stringex (~> 2.5, >= 2.5.2)
-  therubyracer
+  therubyracer (~> 0.12.2)
   twitter-bootstrap-rails (= 2.2.7)
   uglifier (= 1.2.3)
 

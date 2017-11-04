@@ -35,7 +35,7 @@ set :repository, "git://github.com/authentic/martove.com_gateway_ubuntu.git"
 set :scm, "git"
 set :branch, "master"
 set :deploy_via, :remote_cache
-
+set :bundle_flags, "--deployment"
 after 'deploy', 'deploy:cleanup'
 
 namespace :deploy do
