@@ -297,6 +297,7 @@ DEPENDENCIES
   i18n (= 0.6.11)
   jquery-rails
   less-rails (= 2.3.3)
+  libv8
   mysql2 (~> 0.3.20)
   net-ssh (= 2.6.8)
   nokogiri (= 1.5.10)
@@ -317,7 +318,7 @@ DEPENDENCIES
   simple_form
   sprockets (= 2.2.2)
   stringex (~> 2.5, >= 2.5.2)
-  therubyracer (~> 0.12.2)
+  therubyracer
   twitter-bootstrap-rails (= 2.2.7)
   uglifier (= 1.2.3)
 
