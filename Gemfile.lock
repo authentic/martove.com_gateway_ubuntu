@@ -84,7 +84,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1.1)
+    coffee-script-source (1.10.0)
     commonjs (0.2.6)
     curb (0.8.8)
     daemons (1.2.3)
@@ -320,3 +320,6 @@ DEPENDENCIES
   therubyracer
   twitter-bootstrap-rails (= 2.2.7)
   uglifier (= 1.2.3)
+
+BUNDLED WITH
+   1.10.6

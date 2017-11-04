@@ -5,7 +5,7 @@ require "bundler/capistrano"
 #	Application
 #############################################################
 set :application, "martove"
-set :deploy_to, "/home/massanut/#{application}"
+set :deploy_to, "/home/townofma/#{application}"
 
 #############################################################
 #	Settings
@@ -21,8 +21,8 @@ set :scm_verbose, true
 #	Servers
 #############################################################
 
-set :user, "massanut"
-set :domain, "massanut.www76.a2hosting.com"
+set :user, "townofma"
+set :domain, "townofma.www65.a2hosting.com"
 role :web, domain
 role :app, domain
 role :db, domain, :primary => true
