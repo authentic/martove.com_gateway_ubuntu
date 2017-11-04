@@ -7,7 +7,6 @@ require "bundler/capistrano"
 set :application, "martove"
 set :deploy_to, "/home/townofma/#{application}"
 
-
 #############################################################
 #	Settings
 #############################################################
