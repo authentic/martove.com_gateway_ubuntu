@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.20'
 gem 'rack-cache', '1.2'
-gem 'nokogiri', '1.5.3'
+gem 'nokogiri', '1.5.10'
 gem 'rake', '10.4.2'
 
 
@@ -11,7 +11,7 @@ gem 'rake', '10.4.2'
 
 gem 'mysql2', '~> 0.3.20'
 gem 'simple_form'
-gem 'stringex', '~> 2.5', '>= 2.5.2'
+gem 'stringex', '2.5.2'
 gem 'babosa', '~> 0.3.11'
 gem 'acts_as_indexed', '~> 0.7.7'
 gem 'russian', '~> 0.6.0'
