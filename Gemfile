@@ -15,7 +15,6 @@ gem 'stringex', '2.5.2'
 gem 'babosa', '~> 0.3.11'
 gem 'acts_as_indexed', '~> 0.7.7'
 gem 'russian', '~> 0.6.0'
-#gem 'feedjira'
 gem 'feedzirra', '0.2.0.rc2'
 gem 'daemons', '~> 1.2', '>= 1.2.3'
 gem 'gmaps4rails', '2.1.2'
@@ -23,15 +22,11 @@ gem 'gmaps4rails', '2.1.2'
 # in production environments by default.
 gem 'net-ssh', '2.6.8'
 gem 'i18n', '0.6.11'
-
 gem 'highline', '1.6.19'
-
 gem 'execjs', '1.4.0'
 gem 'rails_autolink', '1.1.0'
 gem 'ref', '1.0.5'
 gem 'commonjs', '0.2.6'
-
-gem 'git', '1.2.9.1'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
