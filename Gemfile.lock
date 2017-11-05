@@ -253,8 +253,8 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     stringex (2.5.2)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
       ref
     thor (0.20.0)
     tilt (1.4.1)
@@ -314,7 +314,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.5)
   simple_form
   stringex (~> 2.5, >= 2.5.2)
-  therubyracer
+  therubyracer (= 0.12.2)
   twitter-bootstrap-rails (= 2.2.7)
   uglifier (= 1.2.3)
 
