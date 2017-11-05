@@ -35,7 +35,7 @@ set :repository, "git://github.com/authentic/martove.com_gateway_ubuntu.git"
 set :scm, "git"
 set :branch, "master"
 set :deploy_via, :remote_cache
-set :bundle_flags, "--deployment"
+
 after 'deploy', 'deploy:cleanup'
 
 namespace :deploy do
@@ -57,10 +57,10 @@ namespace :deploy do
 
   end
 
-  desc "Symlinks system folders"
-  task :symlink_system, :role => :app do
-    run "ln -nfs #{shared_path}/system #{release_path}/public/system"
-  end
+ # desc "Symlinks system folders"
+ # task :symlink_system, :role => :app do
+ #   run "ln -nfs #{shared_path}/system #{release_path}/public/system"
+ # end
 
 
   desc "Creates the production log if it does not exist"
@@ -87,7 +87,7 @@ namespace :deploy do
   # end
 
 end
-after 'deploy:update_code', 'deploy:symlink_system'
+#after 'deploy:update_code', 'deploy:symlink_system'
 before 'bundle:install', 'deploy:symlink_config'
 # after 'deploy', 'deploy:start_daemons'
 #before 'deploy', 'deploy:stop_daemons'
