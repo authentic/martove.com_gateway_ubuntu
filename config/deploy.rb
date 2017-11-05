@@ -6,7 +6,7 @@ require "bundler/capistrano"
 #############################################################
 set :application, "martove"
 set :deploy_to, "/home/townofma/#{application}"
-
+set :deploy_via, :remote_cache
 #############################################################
 #	Settings
 #############################################################
@@ -34,7 +34,7 @@ set :bundle_cmd, 'source $HOME/.bash_profile && bundle'
 set :repository, "git://github.com/authentic/martove.com_gateway_ubuntu.git"
 set :scm, "git"
 set :branch, "master"
-set :deploy_via, :remote_cache
+
 
 after 'deploy', 'deploy:cleanup'
 
@@ -87,6 +87,13 @@ namespace :deploy do
   # end
 
 end
+begin
+  require 'bundler/capistrano'
+rescue LoadError
+  raise "\nbundler gem not found. Please install it with '(sudo) gem install bundler'."
+end
+
+after :deploy, 'deploy:cleanup'
 after 'deploy:update_code', 'deploy:symlink_system'
 before 'bundle:install', 'deploy:symlink_config'
 # after 'deploy', 'deploy:start_daemons'
