@@ -88,8 +88,6 @@ namespace :deploy do
 
 end
 
-
-
 begin
   require 'bundler/capistrano'
 rescue LoadError
