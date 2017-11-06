@@ -284,7 +284,7 @@ DEPENDENCIES
   acts-as-taggable-on (= 2.4.1)
   acts_as_indexed (~> 0.7.7)
   babosa (~> 0.3.11)
-  capistrano (= 2.15.9)
+  capistrano (~> 2.15, >= 2.15.9)
   capo (= 0.0.2)
   coffee-rails (~> 3.2.2)
   commonjs (= 0.2.6)
