@@ -4,11 +4,6 @@ gem 'rack-cache', '1.2'
 gem 'nokogiri', '1.5.10'
 gem 'rake', '10.4.2'
 
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-
 gem 'mysql2', '~> 0.3.20'
 gem 'simple_form'
 gem 'stringex', '2.5.2'
@@ -32,7 +27,6 @@ group :assets do
   gem 'sass-rails', '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'twitter-bootstrap-rails', '2.2.7'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', '0.12.2'
   gem 'less-rails', '2.3.3'
   gem 'uglifier', '1.2.3'
