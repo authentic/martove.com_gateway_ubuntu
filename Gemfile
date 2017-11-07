@@ -23,6 +23,7 @@ gem 'rails_autolink', '1.1.0'
 gem 'ref', '1.0.5'
 gem 'commonjs', '0.2.6'
 
+
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
